@@ -52,7 +52,7 @@ set showmatch		" Show matching brackets.
 if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
 endif
-
+set nobackup
 set ruler
 set smarttab
 set background=dark
@@ -64,13 +64,18 @@ set cursorline
 set number
 set tabstop=4
 :inoremap ( ()<ESC>i
-:inoremap {<CR> {<CR>}<ESC>O<TAB>
+:inoremap {<CR> {<CR>}<ESC>O
 :inoremap ) <c-r>=ClosePair(')')<CR>
 :inoremap } <c-r>=ClosePair('}')<CR>
+:inoremap ] <c-r>=ClosePair(']')<CR>
 :inoremap " ""<ESC>i
 :inoremap ' ''<ESC>i
 :inoremap <> <><ESC>i
-
+:inoremap [ []<ESC>i
+:inoremap { {}<ESC>i
+:inoremap < <SPACE>< 
+:inoremap > <SPACE>> 
+:inoremap = <SPACE>= 
 
 
 
